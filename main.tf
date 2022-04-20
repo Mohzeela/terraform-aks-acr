@@ -3,6 +3,17 @@ resource "azurerm_resource_group" "aks-rg" {
   location = var.location
 }
 
+terraform {
+   backend azurerm {
+     resource_group_name = "terraform_rg"
+     storage_account_name = "tfstorage"
+     container_name = "tfstate"
+     key = "terraform.tfstate"
+   }
+   
+
+
+}
 resource "azurerm_role_assignment" "role_acrpull" {
   scope                            = azurerm_container_registry.acr.id
   role_definition_name             = "AcrPull"
