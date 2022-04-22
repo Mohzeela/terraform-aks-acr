@@ -46,7 +46,7 @@ stages:
     pool:
       vmImage: $(vmImageName)
     variables:
-    - group: TerraformEnvVars
+    - group: TerraformEnvVar
     steps:
     - script: |
          set -e
