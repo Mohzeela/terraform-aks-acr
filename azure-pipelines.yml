@@ -38,7 +38,7 @@ stages:
         tags: |
           $(tag)
 - stage: Provision
-  displayName: Terraform on Azure. . .
+  displayName: 'Terraform on Azure. . .'
   dependsOn: Build
   jobs:
   - job: Provision
